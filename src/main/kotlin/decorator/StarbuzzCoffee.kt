@@ -1,10 +1,11 @@
 package decorator
 
 fun main() {
-    val beverage = Espresso()
+    val starbuzzStore = StarbuzzStore()
+    val beverage = starbuzzStore.createBeverage("Espresso")
     println(beverage.description)
 
-    var beverage2: Beverage = HouseBlend()
+    var beverage2 = starbuzzStore.createBeverage("HouseBlend")
     beverage2 = Mocha(beverage2)
     beverage2 = Mocha(beverage2)
     beverage2 = Whip(beverage2)
